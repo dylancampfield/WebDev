@@ -1,39 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Forms Demo</title>
+	<title>Forms and Inputs Demo</title>
 </head>
 <body>
 
-<h1>Login</h1>
+<h1>Login Form</h1>
 
 <!--action = where the form sends data-->
 <!--method = what HTTP method (get or post)-->
 
 <!--form tag is block-level/pushes text outside tag to new line-->
-<!-- <form> 
+<!--another syntax for constructing a form-->
+<!-- <form>
 	<label>
-		Username: 
+		Username:
 		<input type="text" placeholder="username">
 	</label>
 	<label>Password:
 		<input type="password" placeholder="password">
 	</label>
-	
+
 	<input type="submit">
 </form> -->
 
 <!--form tag is block-level/pushes text outside tag to new line-->
-<form> 
+<form>
 	<label for="email">Email:</label>
 	<input id="email" type="email" placeholder="email" required>
-	
+
 	<label for="password">Password:</label>
 	<input id="password" type="password" placeholder="password" required>
-	
+
 	<input type="submit">
 </form>
 
+<h1>Inputs</h1>
 
+<p>Do you prefer cats or dogs?</p>
+
+<form>
+	<label for="dogs">Dogs: </label> <!--For attribute must match ID attribute in the input tag-->
+	<input name="petChoice" id="dogs" type="radio" value="DOGS">
+	<!--Name attribute connects the two radio input types so that only one can be selected-->
+	<label for="cats">Cats: </label>
+	<input name="petChoice" id="cats" type="radio" value="CATS">
+
+	<p>What's your current mood?</p>
+
+	<select name="mood">
+		<!--Options make up the different drop down selections-->
+		<option value="happy">=]</option>
+		<option value="neutral">=|</option>
+		<option value="sad">=[</option>
+		<!--Value attribute sets the data sent by the form if the visual
+		selection in the form is not a word, such as the emoticons in the
+		example above-->
+	</select>
+
+	<input type="text"> <!--Simple text box-->
+	<!--Text area is its own specific tag that provides a larger text box.
+	The size can be altered by specifying the number of rows and colums.-->
+
+	<!--Like all others, the name attribute has to be used to send data in the HTTP request-->
+	<textarea name="paragraph" rows="8" cols="80"></textarea>
+	<!--The text entered in the textarea will be attached to the paragraph key in the request-->
+
+	<button>Go!</button>
+	<!--When a button is the last item in a form, it will act like
+		a submit button by default-->
+</form>
 </body>
 </html>
